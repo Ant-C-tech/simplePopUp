@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body class="bg-secondary">
+
+    <div class="container text-center mt-3 mb-3 pt-3 rounded bg-light">
+        <h1 class="display-3 bg-info rounded pb-3 mb-3">Simple PopUp</h1>
+        <h5 class="border-top text-primary pt-3 pb-3">Bend it to create any type of popup, modal, or content overlay for
+            your
+            website.</h5>
+        <p class="text-primary mb-1">Create unlimited popups of every type you need and customize every facet of each of
+            your popups
+            from theme to position.</p>
+        <p class="text-primary mb-5">No matter if you are a beginner or an advanced user, starting with Simple PopUp is
+            easy.</p>
+
+        <h2 class="display-4 bg-info rounded mb-3">Installation</h2>
+        <h5 class="border-top text-primary pt-3 pb-3">We’ll be happy to help you!</h5>
+
+        <p class="mb-1 font-weight-bold">Include CSS.</p>
+        <p class="mb-1">First, include Bootstrap 4 CSS files into your HTML head:</p>
+        <pre class="bg-dark rounded text-light">
+            <code>
+&#60link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"&#62
+            </code>
+        </pre>
+
+        <p class="mb-1 font-weight-bold">Include JS.</p>
+        <p class="mb-1">Yep, include popUp.js and your own app.js before end tag &#60/body&#62.</p>
+        <pre class="bg-dark rounded text-light">
+            <code>
+&#60script defer src="popUp.js"&#62&#60/script&#62
+&#60script defer src="app.js"&#62&#60/script&#62
+            </code>
+        </pre>
+
+        <p class="mb-1 font-weight-bold">Include HTML.</p>
+        <p class="mb-1">Create div-container with random class-name for every popup-window you need.</p>
+        <p class="mb-1">For example, we create three containers:</p>
+        <pre class="bg-dark rounded text-light">
+            <code>
+&#60div class="popupContainer-1"&#62&#60/div&#62
+&#60div class="popupContainer-2"&#62&#60/div&#62
+&#60div class="popupContainer-3"&#62&#60/div&#62
+            </code>
+        </pre>
+
+        <p class="mb-1 font-weight-bold">Chose control elements.</p>
+        <p class="mb-1">Chose control elements which will show popup-window on click.</p>
+        <p class="mb-1">Add random class-name for every element. If several elements show the same popup-window they
+            will get the same class-name.</p>
+        <p class="mb-1">For example, we choose next elements (buttons):</p>
+        <pre class="bg-dark rounded text-light">
+            <code>
+&#60button class="showModal-1" type="button"&#62Show PopUp #1&#60/button&#62
+
+&#60button class="showModal-2" type="button"&#62Show PopUp #2&#60/button&#62
+
+&#60button class="showModal-3" type="button"&#62Show PopUp #3&#60/button&#62
+&#60button class="showModal-3" type="button"&#62Show PopUp #3&#60/button&#62
+&#60button class="showModal-3" type="button"&#62Show PopUp #3&#60/button&#62
+            </code>
+        </pre>
+
+        <p class="mb-1 font-weight-bold">Call the plugin.</p>
+        <p class="mb-5">Now initialize function in app.js for every popup-window and your simplePopUp is ready.</p>
+
+        <p class="mb-1 font-weight-bold">Options.</p>
+        <p class="mb-1">Options "openBtn" and "container" are necessary.</p>
+
+        <pre class="bg-dark rounded text-light text-left pl-5">
+            <code>
+let popup = new PopUp({
+openBtn: '...class-name of elements which will show popup-window on click...',
+container: '...class-name of div-container provided for this popup-window...',
+content: `...content of popup-window...`,
+maskColor: '...color of background mask...',
+maskOpacity: '...opacity of background mask...',
+})
+            </code>
+        </pre>
+
+        <p class="mb-1">By default Simple PopUp has next options:</p>
+
+        <pre class="bg-dark rounded text-light text-left pl-5">
+            <code>
+({
+content: 'NO CONTENT',
+maskColor: '#343a40',
+maskOpacity: '0.7',
+})
+            </code>
+        </pre>
+
+        <h2 class="display-4 bg-info rounded mb-3">Examples</h2>
+        <h5 class="border-top text-primary pt-3 pb-3">We’ll be happy to show you!</h5>
+
+        <p class="mb-1 font-weight-bold">Example #1.</p>
+        <p class="mb-1">Initialization:</p>
+
+        <pre class="bg-dark rounded text-light text-left pl-5">
+            <code>
+let popup1 = new PopUp({
+    openBtn: 'showModal-1',
+    container: 'popupContainer-1',
+    content: `&#60form>
+    &#60div class="form-row">
+    &#60div class="form-group col-md-6">
+    &#60label for="inputEmail4">Email&#60/label>
+    &#60input type="email" class="form-control" id="inputEmail4">
+    &#60/div>
+    &#60div class="form-group col-md-6">
+    &#60label for="inputPassword4">Password&#60/label>
+    &#60input type="password" class="form-control" id="inputPassword4">
+    &#60/div>
+    &#60/div>
+    &#60div class="form-group">
+    &#60label for="inputAddress">Address&#60/label>
+    &#60input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+    &#60/div>
+    &#60div class="form-group">
+    &#60label for="inputAddress2">Address 2&#60/label>
+    &#60input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+    &#60/div>
+    &#60div class="form-row">
+    &#60div class="form-group col-md-6">
+    &#60label for="inputCity">City&#60/label>
+    &#60input type="text" class="form-control" id="inputCity">
+    &#60/div>
+    &#60div class="form-group col-md-4">
+    &#60label for="inputState">State&#60/label>
+    &#60select id="inputState" class="form-control">
+    &#60option selected>Choose...&#60/option>
+    &#60option>...&#60/option>
+    &#60/select>
+    &#60/div>
+    &#60div class="form-group col-md-2">
+    &#60label for="inputZip">Zip&#60/label>
+    &#60input type="text" class="form-control" id="inputZip">
+    &#60/div>
+    &#60/div>
+    &#60div class="form-group">
+    &#60div class="form-check">
+    &#60input class="form-check-input" type="checkbox" id="gridCheck">
+    &#60label class="form-check-label" for="gridCheck">
+    Check me out
+    &#60/label>
+    &#60/div>
+    &#60/div>
+    &#60button type="submit" class="btn btn-primary">Sign in&#60/button>
+    &#60/form>`,
+    maskColor: '#0097A7',
+    maskOpacity: '0.9',
+})
+            </code>
+        </pre>
+
+        <button class="d-block btn showModal-1 btn-danger mt-3 mr-auto ml-auto mb-3" type="button">Show PopUp
+            #1</button>
+
+
+        <p class="mb-1 font-weight-bold">Example #2.</p>
+        <p class="mb-1">Initialization:</p>
+
+        <pre class="bg-dark rounded text-light text-left pl-5">
+            <code>
+let popup2 = new PopUp({
+    openBtn: 'showModal-2',
+    container: 'popupContainer-2',
+    content: `&#60div class="card mb-3">
+    &#60div class="row no-gutters">
+    &#60div class="col-md-4">
+    &#60img class="card-img w-100" src="https://picsum.photos/500" alt="#">
+    &#60/div>
+    &#60div class="col-md-8">
+    &#60div class="card-body">
+    &#60h5 class="card-title">Card title&#60/h5>
+    &#60p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Et accusantium vitae rem doloribus praesentium illum dolorem cum, quod dolores facilis, 
+    laboriosam alias fugiat quaerat! Quod exercitationem unde facilis quia vel! 
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Et accusantium vitae rem doloribus praesentium illum dolorem cum, quod dolores facilis, 
+    laboriosam alias fugiat quaerat! 
+    Quod exercitationem unde facilis quia vel! Lorem ipsum dolor sit amet consectetur
+    adipisicing elit. Et accusantium vitae rem doloribus praesentium illum dolorem cum, quod 
+    dolores facilis, laboriosam alias fugiat quaerat! Quod exercitationem unde facilis quia 
+    vel! Lorem ipsum dolor sit amet consectetur adipisicing elit. Et accusantium vitae rem 
+    doloribus praesentium illum dolorem cum, quod dolores facilis, laboriosam alias fugiat quaerat! 
+    Quod exercitationem unde facilis quia vel!&#60/p>
+    &#60p class="card-text">
+    &#60small class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Et accusantium vitae rem doloribus praesentium illum dolorem cum, quod dolores facilis, 
+    laboriosam alias fugiat quaerat! Quod exercitationem unde facilis quia vel!&#60/small>&#60/p>
+    &#60/div>
+    &#60/div>
+    &#60/div>
+    &#60/div>`,
+    maskColor: '#009688',
+    maskOpacity: '0.75',
+})
+            </code>
+        </pre>
+
+        <button class="d-block btn showModal-2 btn-danger mt-3 mr-auto ml-auto mb-3" type="button">Show PopUp
+            #2</button>
+
+        <p class="mb-1 font-weight-bold">Example #2.</p>
+        <p class="mb-1">Initialization:</p>
+
+        <pre class="bg-dark rounded text-light text-left pl-5">
+            <code>
+let popup3 = new PopUp({
+    openBtn: 'showModal-3',
+    container: 'popupContainer-3',
+    content: `&#60div class="container">
+    &#60div class="card-deck mb-3 text-center">
+    &#60div class="card mb-4 box-shadow">
+    &#60div class="card-header">
+    &#60h4 class="my-0 font-weight-normal">Free&#60/h4>
+    &#60/div>
+    &#60div class="card-body">
+    &#60h1 class="card-title pricing-card-title">$0 &#60small class="text-muted">/ mo&#60/small>&#60/h1>
+    &#60ul class="list-unstyled mt-3 mb-4">
+    &#60li>10 users included&#60/li>
+    &#60li>2 GB of storage&#60/li>
+    &#60li>Email support&#60/li>
+    &#60li>Help center access&#60/li>
+    &#60/ul>
+    &#60button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free&#60/button>
+    &#60/div>
+    &#60/div>
+    &#60div class="card mb-4 box-shadow">
+    &#60div class="card-header">
+    &#60h4 class="my-0 font-weight-normal">Pro&#60/h4>
+    &#60/div>
+    &#60div class="card-body">
+    &#60h1 class="card-title pricing-card-title">$15 &#60small class="text-muted">/ mo&#60/small>&#60/h1>
+    &#60ul class="list-unstyled mt-3 mb-4">
+    &#60li>20 users included&#60/li>
+    &#60li>10 GB of storage&#60/li>
+    &#60li>Priority email support&#60/li>
+    &#60li>Help center access&#60/li>
+    &#60/ul>
+    &#60button type="button" class="btn btn-lg btn-block btn-primary">Get started&#60/button>
+    &#60/div>
+    &#60/div>
+    &#60div class="card mb-4 box-shadow">
+    &#60div class="card-header">
+    &#60h4 class="my-0 font-weight-normal">Enterprise&#60/h4>
+    &#60/div>
+    &#60div class="card-body">
+    &#60h1 class="card-title pricing-card-title">$29 &#60small class="text-muted">/ mo&#60/small>&#60/h1>
+    &#60ul class="list-unstyled mt-3 mb-4">
+    &#60li>30 users included&#60/li>
+    &#60li>15 GB of storage&#60/li>
+    &#60li>Phone and email support&#60/li>
+    &#60li>Help center access&#60/li>
+    &#60/ul>
+    &#60button type="button" class="btn btn-lg btn-block btn-primary">Contact us&#60/button>
+    &#60/div>
+    &#60/div>
+    &#60/div>
+    &#60/div>`,
+    maskColor: '#9E9E9E',
+    maskOpacity: '0.8',
+})
+            </code>
+        </pre>
+
+        <div class="btn-group" role="group" aria-label="Button group">
+            <button class="btn showModal-3 btn-danger mt-3 ml-1 mr-1 mb-3" type="button">Show PopUp #3</button>
+            <button class="btn showModal-3 btn-danger mt-3 ml-1 mr-1 mb-3" type="button">Show PopUp #3</button>
+            <button class="btn showModal-3 btn-danger mt-3 ml-1 mr-1 mb-3" type="button">Show PopUp #3</button>
+        </div>
+
+        <h5 class="border-top text-primary pt-3 pb-3">Enjoy it!</h5>
+    </div>
+
+
+    <div class="popupContainer-1"></div>
+    <div class="popupContainer-2"></div>
+    <div class="popupContainer-3"></div>
+
+    <script defer src="popUp.js"></script>
+    <script defer src="app.js"></script>
+</body>
+
+</html>
