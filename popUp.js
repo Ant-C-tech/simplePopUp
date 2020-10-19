@@ -59,10 +59,12 @@ function PopUp(obj) {
 
         // Reload btn
         if (this.reloadBtn) {
+
             document.querySelector(`.${this.reloadBtn}`).addEventListener('click', () => {
                 for (let item of document.querySelectorAll(`.${this.openBtn}`)) {
                     item.addEventListener('click', () => {
                         this.showPopup()
+                        console.log("PopUp -> this.showPopup()", this.showPopup())
                     })
                 }
             })
@@ -71,6 +73,13 @@ function PopUp(obj) {
 
         // Hide popup buttons:
         document.querySelector(`.${btnCloseName}`).addEventListener('click', () => {
+                for (let item of document.querySelectorAll(`.${this.openBtn}`)) {
+                    item.addEventListener('click', () => {
+                        this.showPopup()
+                        console.log("this.showPopup()", this.showPopup())
+                    })
+                }
+
             this.hidePopup()
         })
         document.querySelector(`.${btnCloseName}`).addEventListener('mouseover', this.btnAnimationOn)
@@ -85,10 +94,10 @@ function PopUp(obj) {
 
     this.createPopupElements = function () {
         return `<div class="${popupMaskName}"></div>
-                        <div class="container ${popupWindowName} text-center rounded pt-2 pr-2 pb-4 pl-2">
+                        <div class="container ${popupWindowName} shadow-lg text-center rounded pt-2 pr-2 pb-4 pl-2">
                             <div class="row">
                                 <div class="col">
-                                    <div class="${btnCloseName} d-flex justify-content-center align-items-center border border-dark rounded-circle ml-auto mb-1" type="button" style="width: 30px; height: 30px; transition: transform ease-in-out 0.3s"><p style="font-size:18px; font-family:'Montserrat', sans-serif; margin:0;">&#10006</p></div>
+                                    <div class="${btnCloseName} d-flex justify-content-center align-items-center border border-dark rounded-circle ml-auto mb-3" type="button" style="width: 30px; height: 30px; transition: transform ease-in-out 0.3s"><p class="mb-0" style="font-size:18px; font-family:'Montserrat', sans-serif;">&#10006</p></div>
                                     ${this.content}
                                 </div>
                             </div>
