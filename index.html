@@ -80,11 +80,12 @@ integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7
         <pre class="bg-dark rounded text-light text-left pl-5">
             <code>
 let popup = new PopUp({
-openBtn: '...class-name of elements which will show popup-window on click...',
+openBtn: '...class-name of elements that will show popup-window on click...',
 container: '...class-name of div-container provided for this popup-window (content must be a block element for proper render)...',
+reloadBtn: '...class-name of elements that will update the list of openBtn-elements on click (optional - closePopUpButton update the list of openBtn-element every time you press it)...'
 content: `...content of popup-window...`,
 maskColor: '...color of background mask...',
-maskOpacity: '...opacity of background mask...',
+maskOpacity: '...opacity of background mask (maskOpacity can't be equals 0)...',
 })
             </code>
         </pre>
@@ -290,7 +291,7 @@ let popup3 = new PopUp({
     <div class="popupContainer-2"></div>
     <div class="popupContainer-3"></div>
 
-    <script defer src="popUp.min.js"></script>
+    <script defer src="1/popUp.js"></script>
     <script defer src="app.js"></script>
 </body>
 
